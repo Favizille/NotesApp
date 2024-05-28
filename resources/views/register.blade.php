@@ -18,6 +18,14 @@
       
                       <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Register on Notes App</p>
       
+                      @if(count($errors) > 0)
+                        @foreach( $errors->all() as $message )
+                            <div class="alert alert-danger display-hide">
+                            <span>{{ $message }}</span>
+                            </div>
+                        @endforeach
+                      @endif
+
                       <form action="{{route('registration')}}" method="POST" class="mx-1 mx-md-4">
                         @csrf
                         <div class="d-flex flex-row align-items-center mb-4">
