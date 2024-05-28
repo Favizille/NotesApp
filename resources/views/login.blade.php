@@ -19,6 +19,14 @@
                       <h1 class="text-center text-secondary h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Welcome Back</h1>
                       <p class="text-center h4 fw-bold mb-5 mx-1 mx-md-4 mt-4">Please Login</p>
       
+                      @if(count($errors) > 0)
+                        @foreach( $errors->all() as $message )
+                            <div class="alert alert-danger display-hide">
+                            <span>{{ $message }}</span>
+                            </div>
+                        @endforeach
+                      @endif
+
                       <form class="mx-1 mx-md-4" method="POST" action="{{route('logging-in')}}">
                         @csrf
                         <div class="d-flex flex-row align-items-center mb-4">

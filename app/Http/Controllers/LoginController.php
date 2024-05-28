@@ -22,8 +22,8 @@ class LoginController extends Controller
 
             $user->createToken('api_token')->plainTextToken;
 
-            return "Logged in Successfully";
-            // return redirect()->route("notes");
+            // return "Logged in Successfully";
+            return redirect()->route("notes");
         }
       
         return redirect()->route('login')->withError('User Login Failed');

@@ -18,7 +18,7 @@ class RegisterController extends Controller
         $registrationSuccessful = User::create($userDetails);
 
         if(!$registrationSuccessful){
-            return redirect()->route("register")->withErrors("User couldn't br registered");
+            return redirect()->route("register")->withErrors("User couldn't be registered");
         }
 
         return "Succesfully registered";

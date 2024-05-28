@@ -15,23 +15,19 @@ use App\Http\Controllers\RegisterController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Wednesday; Create Controllers and create view with routes 
-// Design views for register and login Authentication
-// Thursday;Download Admin Template
-// Assignment; 
+
+// Assignment
+// 1. Create a Notes View with it's adequate route and contorller
+// 2. Following the procedure we use in registering a user, Login a user and if the login is not successful redirect to the login page but if it is successful redirect to the notes view route you created above. 
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/register', function () {
-//     return view('register');
-// });
-
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/registration', [RegisterController::class, 'registration'])->name('registration');
 Route::post('/loggin-in', [LoginController::class, 'logginIn'])->name('logging-in');
 Route::get('/notes', [NoteController::class, 'notes'])->name('notes');
-
+Route::post('/note/create', [NoteController::class, 'store'])->name('note.create');
